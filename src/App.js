@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { Component } from 'react';
+import { DISHES } from './shared/dishes';
 import Menu from './components/MenuComponent';
 import Car from './components/Car';
 import Comment from './components/Comment';
@@ -36,18 +38,34 @@ const comment = {
     avatarUrl: './images/alberto.png'
   }
 };
+// class App extends Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       dishes: DISHES
+//     };
+//   }
+// }
 function App(){
-  return(
+   return(
     <div className='App'>
       <Navbar dark color="primary">
         <div className='container'>
           <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
         </div>
       </Navbar>
-      <Menu/>
+      <Menu dishes={DISHES}/>
     </div>
-  )
+  );
 }
+
+
+
+// function App(){
+//   return (
+//     <Menu dishes={DISHES}/>
+//   );
+// }
 
 // function App(){
 //   return (
