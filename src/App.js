@@ -4,6 +4,7 @@ import "./App.css";
 
 import { Component } from "react";
 import { DISHES } from "./shared/dishes";
+import Main from "./components/MainComponent";
 import DishDetail from "./components/DishdetailComponent";
 import Menu from "./components/MenuComponent";
 import Car from "./components/Car";
@@ -31,32 +32,42 @@ import Welcome from "./components/Welcome";
 //   );
 // }
 
-const comment = {
-  date: new Date(),
-  text: "I hope you enjoy my restaurant!",
-  author: {
-    name: "alberto",
-    avatarUrl: "./images/alberto.png",
-  },
-};
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dishes: DISHES,
-    };
-  }
-  render() {
-    return (
+// const comment = {
+//   date: new Date(),
+//   text: "I hope you enjoy my restaurant!",
+//   author: {
+//     name: "alberto",
+//     avatarUrl: "./images/alberto.png",
+//   },
+// };
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       dishes: DISHES,
+//     };
+//   }
+//   render() {
+//     return (
+//       <div className="App">
+//         <Navbar dark color="primary">
+//           <div className="container">
+//             <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
+//           </div>
+//         </Navbar>
+//         <DishDetail dishes={this.state.dishes} />
+//       </div>
+//     );
+//   }
+// }
+class App extends React.Component {
+  
+  render(){
+    return(
       <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-          </div>
-        </Navbar>
-        <DishDetail dishes={this.state.dishes} />
+        <Main/>
       </div>
-    );
+    )
   }
 }
 // function App(){
