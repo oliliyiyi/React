@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+import { BrowserRouter } from "react-router-dom";
 import { Component } from "react";
 import { DISHES } from "./shared/dishes";
 import Main from "./components/MainComponent";
@@ -60,28 +61,24 @@ import Welcome from "./components/Welcome";
 //     );
 //   }
 // }
-class App extends React.Component {
-  
-  render(){
-    return(
+
+function App(){
+   return(
+    // <div className='App'>
+    //   <Navbar dark color="primary">
+    //     <div className='container'>
+    //       <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
+    //     </div>
+    //   </Navbar>
+    //   <Menu dishes={DISHES}/>
+    // </div>
+    <BrowserRouter>
       <div className="App">
-        <Main/>
+        <Main />
       </div>
-    )
-  }
+    </BrowserRouter>
+  );
 }
-// function App(){
-//    return(
-//     <div className='App'>
-//       <Navbar dark color="primary">
-//         <div className='container'>
-//           <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
-//         </div>
-//       </Navbar>
-//       <Menu dishes={DISHES}/>
-//     </div>
-//   );
-// }
 
 // function App(){
 //   return (
@@ -119,5 +116,4 @@ class App extends React.Component {
 //     );
 //   }
 // }
-
-export default App;
+export default App
