@@ -12,6 +12,9 @@ import Car from "./components/Car";
 import Comment from "./components/Comment";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Welcome from "./components/Welcome";
+
+import {Provider} from 'react-redux';
+import {ConfigureStory} from './redux/configureStore';
 // function App() {
 //   return (
 //     <div className="App">
@@ -61,8 +64,9 @@ import Welcome from "./components/Welcome";
 //     );
 //   }
 // }
-
+const store = ConfigureStory();
 function App(){
+  
    return(
     // <div className='App'>
     //   <Navbar dark color="primary">
@@ -72,11 +76,14 @@ function App(){
     //   </Navbar>
     //   <Menu dishes={DISHES}/>
     // </div>
-    <BrowserRouter>
-      <div className="App">
+    <Provider store={store}>
+      <BrowserRouter>
+        <div className="App">
         <Main />
-      </div>
-    </BrowserRouter>
+        </div>
+      </BrowserRouter>
+    </Provider>
+    
   );
 }
 
